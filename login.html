@@ -1,0 +1,52 @@
+<html lang="en">
+    <head>
+        <title>DocsCo - Inicio de Sesión</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=2" />
+        <meta name="google" content="notranslate" />
+        <meta name="description" content="Inicio de sesión DocsCo" />
+        <meta name="keywords" content="Documentos, gestion, documental" />
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script></script>
+        <link rel="icon" href="./assets/favicon.ico" />
+        <script src="login.js" ></script>
+    </head>
+    <body>
+        <div class="login-card">
+            <!-- <figure>
+                <img src="./assets/logo.png" alt="logo" srcset="
+                ./assets/logo1.webp   500w,
+                ./assets/logo2.avif   800w,
+                ./assets/logo3.avif 1000w,
+                ./assets/logo4.webp 1400w" />
+                <figcaption>DocsCo Logo</figcaption>
+                 
+            </figure> -->
+            <div class="login-title">
+                <picture>
+                    <source type="image/png" srcset="
+                    ./assets/logo.png" />
+                    <img src="./assets/logo.png" alt="logo" id="logo"  />
+                </picture>
+                <h1>Bienvenido</h1>
+                <!-- <picture></picture>
+                    <source type="image/png" srcset="
+                    ./assets/logo.png" />
+                    <img src="./assets/logo.png" alt="logo" id="logo"  />
+                </picture>
+                <h1>Bienvenido</h1> -->
+            </div>
+            <form action="dashboard.html">
+                <label for="username" data-text="El boton">Username:</label>
+                <input class="campo_formulario" type="text" name="username" placeholder="Nombre de Usuario" id="username" />
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="Contraseña" id="password" />
+                <input class="campo_formulario" type="submit" value="Ingresar"/>
+            </form>
+            <div>
+                <a href="./forgot-password.html" target="_blank" hreflang="es" >¿Olvidaste tu Contraseña?</a>
+                <a href="./register.html" target="_blank" hreflang="es" >¿No tienes cuenta? Registrate</a>
+            </div>
+        </div>
+    </body>
+</html>

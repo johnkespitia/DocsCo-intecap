@@ -1,0 +1,150 @@
+@import url(./mobile.css) screen and (max-width: 500px);
+:root{
+    --main-background: rgb(120, 120, 175);
+    --border-custom: 1px solid #509462;
+}
+
+@font-face {
+    font-family: bebas_neue;
+    src: url('./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+    font-family: rubik;
+    src: url('./assets/fonts/rubik/Rubik-Regular.ttf');
+ }
+ @font-face {
+    font-family: rubik;
+    font-weight: bold;
+    src: url('./assets/fonts/rubik/Rubik-Bold.ttf');
+ }
+ @font-face {
+    font-family: rubik;
+    font-weight: lighter;
+    src: url('./assets/fonts/rubik/Rubik-Light.ttf');
+ }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-family: bebas_neue;
+    background-color: var(--main-background);
+}
+.login-card{
+    --main-background: #c0c0c5;
+    width: 500px;
+    background-color: var(--main-background);
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    padding: 20px;
+    /* margin: 40px; */
+    /* position: absolute;
+    left: 50%;
+    margin-left: -250px; */
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%; */
+    
+}
+
+.login-card img#logo{
+    width: 80px;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit:cover;
+    object-position: bottom;
+}
+
+.login-card form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.login-card form input:not([type=submit]){
+    font-family: rubik;
+    font-weight: lighter;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.login-card form input[type=submit]{
+    width: 150px;
+    justify-self: right;
+    align-self:flex-end;
+    background-color: #95f0ad;
+    border: var(--border-custom);
+    padding: 4px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 5px #0000007a;
+    cursor: pointer;
+}
+.login-card form label::after{
+    content: ' ' attr(data-text) ' ' !important;
+}
+
+.login-card form input[type=submit]:hover{
+    background-color: #64f08a;
+    border: 1px solid #2c6d3d;
+    box-shadow: 4px 4px 5px #000000a2;
+    font-weight: bold;
+    animation: spin 10s ease-out infinite;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotateZ(0);
+    }
+    100% {
+      transform: rotateZ(360deg);
+    }
+}
+
+@keyframes moved {
+    0% {
+      transform: translate(100px);
+    }
+    25% {
+        transform: translate(75px);
+      }
+      50% {
+        transform: translate(50px);
+      }
+    100% {
+      transform: translate(0);
+    }
+}
+
+.login-card form label::after{
+    content: ' 🙂 ';
+}
+
+.login-card form label::before{
+    content: ' 💻 ';
+}
+
+.login-card .login-title{
+    display: grid;
+    grid-template-columns: 20% 70%;
+    grid-column-gap: 10%;
+    grid-row-gap: 5%;
+    font-family: rubik;
+    font-weight: bold;
+}
+
+
+
+@media screen and (min-width: 501px) and (max-width: 800px){
+    a{
+        color: #2c6d3d;
+    }
+}
+
+@media print{
+    a{
+        color: #5e2c6d;
+    }
+}

@@ -1,0 +1,129 @@
+<html lang="es">
+    <head>
+        <title>DocsCo - Dashboard</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=2" />
+        <meta name="google" content="notranslate" />
+        <meta name="description" content="Dashboard DocsCo" />
+        <meta name="keywords" content="Documentos, gestion, documental" />
+        <style></style>
+        <script></script>
+        <link rel="icon" href="./assets/favicon.ico" />
+    </head>
+    <body>
+        <header>
+            <div id="main-menu">
+                <img src="./assets/logo.png" alt="Logo DocsCo" width="80" height="80" />
+                <nav>
+                    <ul>
+                        <li><a href="./dashboard.html">Inicio</a></li>
+                        <li><a href="./new.html">Crear Documento</a></li>
+                        <li><a href="./users.html">Administración Usuarios</a></li>
+                        <li><a href="./docs.html">Administración Documentos</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="search">
+                <form>
+                    <input type="search" name="word" placeholder="Documento a buscar" />
+                    <input type="submit" value="buscar" />
+                </form>
+            </div>
+            <div id="user-menu">
+                <nav>
+                    <ul>
+                        <li><a href="./profile.html">Mi Perfil</a></li>
+                        <li><a href="./logout.html">Salir</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+         <aside>
+            <nav>
+                <dl>
+                    <dt>Mis Documentos</dt>
+                    <dd>
+                        <ul>
+                            <li><a href="">Archivo 1</a></li>
+                            <li><a href="">Archivo 2</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+
+
+                
+                <ul>
+                    <li>
+                        Mis Documentos
+                        <ul>
+                            <li><a href="">Archivo 1</a></li>
+                            <li><a href="">Archivo 2</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Compartidos
+                        <ul>
+                            <li><a href="">Archivo 1</a></li>
+                            <li><a href="">Archivo 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+         </aside>
+         <main>
+            <h2>Nuevo Documento</h2>
+            <p>Ingresa los <q>datos</q> <span class="otra-fuente">del</span> <em>documento</em> al almacenarlo,<br/> <strong> Te guiaremos a la pantalla</strong> <i>de edición</i>.</p>
+            <hr/>
+            <code>
+                .body{
+                    border: 1px;
+                }
+
+            </code>
+            <form method="post" action="">
+                <div>
+                    <label for="title">Titulo</label>
+                    <input type="text" id="title" name="name" minlength="2" maxlength="5" required />
+                </div>
+                <div>
+                    <label for="description" >Descripción</label>
+                    <textarea id="description" name="description" cols="50" rows="10"></textarea>
+                </div>
+                <div>
+                    <label for="type" >Descripción</label>
+                    <select id="type" name="type">
+                        <optgroup label="Adjuntos">
+                            <option value="1">Imagen</option>
+                            <option value="2" selected>PDF</option>
+                            <option value="3">MS Files</option>
+                        </optgroup>
+                        <optgroup label="Editables">
+                            <option value="4">Text Files</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label for="published_date">Fecha de Publicación</label>
+                    <input type="date" id="published_date" name="published_date" min="2024-08-03" max=""/>
+                </div>
+                <div>
+                    <label for="published">Publicado</label>
+                    <input type="checkbox" id="published" checked name="published" value="1" />
+                     <input type="radio" id="publishedY" name="published" value="1" />Si
+                     <input type="radio" id="publishedN" name="published" value="0" />No
+                     <input type="radio" id="publishedP" name="published" value="2" />Pendiente
+                </div>
+                <div>
+                    <label for="folder" >Carpeta</label>
+                    <select id="folder" name="folder">
+                        <option value="1">Mis Documentos</option>
+                        <option value="2">Compartidas</option>
+                    </select>
+                </div>
+                <input type="submit" value="Crear Documento" />
+                <input type="reset" value="Limpiar" />
+            </form>
+         </main>
+         <footer></footer>
+    </body>
+</html>
