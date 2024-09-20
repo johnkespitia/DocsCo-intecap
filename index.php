@@ -60,8 +60,8 @@ class Shape {
 
     const NAME="FIGURA";
 
-    public function calculateArea($side, $side){
-        $this->area = $side*$side;
+    public function calculateArea($sidea, $sideb){
+        $this->area = $sidea*$sideb;
     }
 
     public function getColor() {
@@ -90,11 +90,25 @@ class Square extends Shape{
     public function perimeter(){
         $this->area = $this->area *4;
     }
+    public function __construct($color="red", $noAngles=4){
+        parent::__construct($color,$noAngles);
+    } 
+    public function calculateArea($sidea, $sideb){
+        parent::calculateArea($sidea, $sideb);
+        $this->area = 2 *$sidea + $sideb;
+    }
+    public function getColor() {
+        $color = parent::getColor();
+        if($color === "red"){
+            return "green";
+        }
+        return $color;
+    }
 }
 
 $square = new Shape();
 $square2 = new Shape("blue");
-$square3 = new Shape("green", 3);
+$square3 = new Square("green", 4);
 $square->area;
 $square::NAME;
 Shape::NAME;
