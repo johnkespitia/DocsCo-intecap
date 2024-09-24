@@ -1,0 +1,20 @@
+{
+    "name": "johnkespitia/docsco-intecap",
+    "description": "Proyecto de practica PHP fullstack Intecap",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Johnkespitia\\DocscoIntecap\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "John Espitia",
+            "email": "jcespitia1@gmail.com"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^3.0"
+    }
+}
