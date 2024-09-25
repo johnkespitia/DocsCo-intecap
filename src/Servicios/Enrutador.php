@@ -1,6 +1,5 @@
 <?php
 namespace Servicios;
-use Controlador\InicioControlador;
 class Enrutador{
 
     const POST = "post";
@@ -34,13 +33,13 @@ class Enrutador{
 
         if($metodoHTTP == "GET"){
             if(!empty($this->_getRutas[$url])){
-                $objeto = $this->_getRutas[$url][0];
+                $objeto = new $this->_getRutas[$url][0]();
                 $metodo = $this->_getRutas[$url][1];
                 return $objeto->$metodo();
             }
         }else{
             if(!empty($this->_postRutas[$url])){
-                $objeto = $this->_getRutas[$url][0];
+                $objeto = new $this->_getRutas[$url][0]();
                 $metodo = $this->_getRutas[$url][1];
                 return $objeto->$metodo();
             }

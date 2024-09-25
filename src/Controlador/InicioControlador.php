@@ -1,8 +1,13 @@
 <?php
 namespace Controlador;
-
-class InicioControlador{
+use Modelo\PDOConexion;
+class InicioControlador extends Controlador{
+    public function inicio(){
+        return $this->retorno(["mensaje"=>"Bienvenido"]);
+    }
     public function saludoAccion(){
-        return "Hola Amigos Intecap";
+        $db = new PDOConexion();
+        $db->conectar();
+        return $this->retorno(["mensaje"=>"Hola Amigos Intecap"], 404);
     }
 }

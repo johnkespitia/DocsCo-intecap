@@ -1,10 +1,13 @@
 <?php
 include 'vendor/autoload.php';
 use Servicios\Enrutador;
-use Controlador\InicioControlador;
 
-$inicioControlador = new InicioControlador();
 $enrutador = new Enrutador();
-$enrutador->addRuta(Enrutador::GET, "/saludo",$inicioControlador, "saludoAccion");
-
-echo $enrutador->ruta();
+$enrutador->addRuta(Enrutador::GET, "/saludo","Controlador\InicioControlador", "saludoAccion");
+$enrutador->addRuta(Enrutador::GET, "/","Controlador\InicioControlador", "inicio");
+try {
+    echo $enrutador->ruta();
+} catch (\Throwable $th) {
+    $errorC = new Controlador\ErrorControlador();
+    echo $errorC->error($th,500);
+}
