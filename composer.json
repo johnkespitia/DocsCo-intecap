@@ -5,7 +5,9 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Johnkespitia\\DocscoIntecap\\": "src/"
+            "Johnkespitia\\DocscoIntecap\\": "src/",
+            "Controlador\\": "src/Controlador/",
+            "Servicios\\": "src/Servicios/"
         }
     },
     "authors": [
