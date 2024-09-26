@@ -1,5 +1,8 @@
 <?php
 namespace Servicios;
+
+use Modelo\PDOConexion;
+
 class Enrutador{
 
     const POST = "post";
@@ -30,16 +33,16 @@ class Enrutador{
     public function ruta(){
         $url = $_SERVER["REQUEST_URI"];
         $metodoHTTP = $_SERVER["REQUEST_METHOD"];
-
+        // $pdo = PDOConexion::getInstancia()->getPDO();
         if($metodoHTTP == "GET"){
             if(!empty($this->_getRutas[$url])){
-                $objeto = new $this->_getRutas[$url][0]();
+                $objeto = new $this->_getRutas[$url][0](); //($pdo);
                 $metodo = $this->_getRutas[$url][1];
                 return $objeto->$metodo();
             }
         }else{
             if(!empty($this->_postRutas[$url])){
-                $objeto = new $this->_getRutas[$url][0]();
+                $objeto = new $this->_getRutas[$url][0](); //($pdo);
                 $metodo = $this->_getRutas[$url][1];
                 return $objeto->$metodo();
             }
