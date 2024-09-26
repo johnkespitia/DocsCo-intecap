@@ -8,6 +8,6 @@ class InicioControlador extends Controlador{
     public function saludoAccion(){
         $db = new PDOConexion();
         $db->conectar();
-        return $this->retorno(["mensaje"=>"Hola Amigos Intecap"], 404);
+        return $this->retorno(["mensaje"=>"Hola Amigos Intecap", "env"=> $_ENV], 404);
     }
 }

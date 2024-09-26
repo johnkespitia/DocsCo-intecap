@@ -2,12 +2,14 @@
 namespace Modelo;
 
 class PDOConexion{
-    public function conectar(){
+    public function conectar(){ 
         try {
-            $dns="mysql:host=$host;dbname=$dbname";
-            $pdo = new \PDO($dns, $username, $password);
+            
+            $dns="mysql:host={$_ENV['DATABASE_HOST']};dbname={$_ENV['DATABASE_DBNAME']}";
+            $pdo = new \PDO($dns, $_ENV['DATABASE_USER'], $_ENV['DATABASE_PASSWORD']);
         } catch (\Throwable $th) {
-            throw $th;
+           throw $th;
         }
+
     }
 }
