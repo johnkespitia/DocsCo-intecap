@@ -3,11 +3,18 @@ namespace Controlador;
 
 abstract class Controlador{
 
-    // protected $pdo;
+    protected $request;
 
-    // public function __construct($pdo=null){
-    //     $this->pdo = $pdo;
-    // } 
+    public function __construct(){
+        $request = file_get_contents('php://input');
+        $requestArray = json_decode($request, true);
+        $this->request = [
+            "data"=> $requestArray,
+            "post"=> $_POST,
+            "get"=> $_GET,
+            "files" => $_FILES
+        ];
+    } 
 
     public abstract function inicio();
 
