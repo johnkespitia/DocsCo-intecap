@@ -8,7 +8,8 @@
             "Johnkespitia\\DocscoIntecap\\": "src/",
             "Controlador\\": "src/Controlador/",
             "Servicios\\": "src/Servicios/",
-            "Modelo\\": "src/Modelo/"
+            "Modelo\\": "src/Modelo/",
+            "Middleware\\": "src/Middleware/"
         }
     },
     "authors": [

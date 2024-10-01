@@ -10,13 +10,14 @@ $cargadorDotEnv->load();
 use Servicios\Enrutador;
 
 $enrutador = new Enrutador();
+$enrutador->addRuta(Enrutador::POST, "/login","Controlador\AuthControlador", "login");
 $enrutador->addRuta(Enrutador::GET, "/saludo","Controlador\InicioControlador", "saludoAccion");
 $enrutador->addRuta(Enrutador::GET, "/","Controlador\InicioControlador", "inicio");
 
-$enrutador->addRuta(Enrutador::GET, "/usuarios","Controlador\UsuarioControlador", "inicio");
-$enrutador->addRuta(Enrutador::POST, "/usuarios","Controlador\UsuarioControlador", "new");
-$enrutador->addRuta(Enrutador::PUT, "/usuarios","Controlador\UsuarioControlador", "update");
-$enrutador->addRuta(Enrutador::DELETE, "/usuarios","Controlador\UsuarioControlador", "delete");
+$enrutador->addRuta(Enrutador::GET, "/usuarios","Controlador\UsuarioControlador", "inicio", "Middleware\AuthMiddleware");
+$enrutador->addRuta(Enrutador::POST, "/usuarios","Controlador\UsuarioControlador", "new", "Middleware\AuthMiddleware");
+$enrutador->addRuta(Enrutador::PUT, "/usuarios","Controlador\UsuarioControlador", "update", "Middleware\AuthMiddleware");
+$enrutador->addRuta(Enrutador::DELETE, "/usuarios","Controlador\UsuarioControlador", "delete", "Middleware\AuthMiddleware");
 try {
     echo $enrutador->ruta();
 } catch (\Exception $th) {

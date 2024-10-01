@@ -1,5 +1,6 @@
 <?php
 namespace Modelo;
+session_start();
 
 class UsuarioModelo extends Modelo{
     const TABLE_NAME = "usuarios";
@@ -52,7 +53,6 @@ class UsuarioModelo extends Modelo{
         $result = $query->execute($values);
         return $result;
     }
-
     public  function delete($id){
         $query = $this->pdo->prepare("DELETE FROM ".self::TABLE_NAME." where id = :id");
         $result = $query->execute([":id"=>$id]);
