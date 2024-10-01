@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <script></script>
         <link rel="icon" href="./assets/favicon.ico" />
-        <script src="login.js" ></script>
+        <script src="ajax.js" ></script>
     </head>
     <body>
         <div class="login-card">
@@ -36,9 +36,9 @@
                 </picture>
                 <h1>Bienvenido</h1> -->
             </div>
-            <form action="dashboard.html">
+            <form action="dashboard.html" id="login-form">
                 <label for="username" data-text="El boton">Username:</label>
-                <input class="campo_formulario" type="text" name="username" placeholder="Nombre de Usuario" id="username" />
+                <input class="campo_formulario" type="text" name="username" placeholder="Nombre de Usuario" id="email" />
                 <label for="password">Password:</label>
                 <input type="password" name="password" placeholder="Contraseña" id="password" />
                 <input class="campo_formulario" type="submit" value="Ingresar"/>
